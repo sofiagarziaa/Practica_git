@@ -1,0 +1,34 @@
+.Titulo {
+    font-family: ;
+    font-size: 45px;
+    font-weight: normal;
+    text-align: center;
+    color:brown
+}
+.Subtitulo {
+    font-family: ;
+    font-size: 25px;
+    font-weight: normal;
+    text-align: left;
+    color:rgb(106, 58, 58)
+}
+backgroung-image:{
+    URL()
+}
+.contenedorPadre{
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction row: 
+    .Producto{
+        flex-direction:row;
+        width: 120px;
+        height: 140px;
+    
+    }
+    
+    .Carrito{
+        width: 120px;
+    }
+    
+}
+
