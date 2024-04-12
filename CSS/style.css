@@ -12,18 +12,17 @@
     text-align: left;
     color:rgb(106, 58, 58)
 }
-backgroung-image:{
-    URL()
+background-image{
+    URL(.)
 }
-.contenedorPadre{
+.contenedorPadre {
     display: flex;
     flex-wrap: wrap;
     flex-direction row: 
-    .Producto{
+.Producto{
         flex-direction:row;
         width: 120px;
         height: 140px;
-    
     }
     
     .Carrito{
