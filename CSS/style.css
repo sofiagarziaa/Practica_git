@@ -17,13 +17,15 @@ body{
     text-align: left;
     color:rgb(106, 58, 58);
 }
+/*
 background-image{
     URL(.)
-}
+}*/
 .contenedorPadre {
     display: flex;
     flex-wrap: wrap;
-    flex-direction row: 
+    flex-direction: row;
+}
 .Producto{
         flex-direction:row;
         width: 120px;
@@ -34,5 +36,5 @@ background-image{
         width: 120px;
     }
     
-}
+
 
