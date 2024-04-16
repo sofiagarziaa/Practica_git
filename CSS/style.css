@@ -15,18 +15,15 @@ body{
     font-size: 25px;
     font-weight: normal;
     text-align: left;
-    color:rgb(106, 58, 58)
+    color:rgb(106, 58, 58);
 }
-
 background-image{
-    URL()
+    URL(.)
 }
 .contenedorPadre {
     display: flex;
     flex-wrap: wrap;
     flex-direction row: 
-}
-
 .Producto{
         flex-direction:row;
         width: 120px;
@@ -35,5 +32,7 @@ background-image{
     
 .Carrito{
         width: 120px;
-}
+    }
     
+}
+
