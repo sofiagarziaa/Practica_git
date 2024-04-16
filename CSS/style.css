@@ -5,6 +5,11 @@
     text-align: center;
     color:brown
 }
+
+body{
+    font-family: 'Roboto', sans-serif;
+    background: #f6f6f6;
+}
 .Subtitulo {
     font-family: kanit ;
     font-size: 25px;
@@ -12,22 +17,23 @@
     text-align: left;
     color:rgb(106, 58, 58)
 }
+
 background-image{
-    URL(.)
+    URL()
 }
 .contenedorPadre {
     display: flex;
     flex-wrap: wrap;
     flex-direction row: 
+}
+
 .Producto{
         flex-direction:row;
         width: 120px;
         height: 140px;
-    }
-    
-    .Carrito{
-        width: 120px;
-    }
-    
 }
-
+    
+.Carrito{
+        width: 120px;
+}
+    
