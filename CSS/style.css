@@ -3,8 +3,28 @@
     flex-wrap: wrap;
     flex-direction: row;
     justify-content: space-between;
-    background-image: url("../Img/Pantalon\ 1.jpg");
+    background-image: url("../Img/grupo\ hombre.jpg") ;
+    background-size: 300px;
+    
 }
+.contenedor-super2{
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: space-between;
+    background-image: url("../Img/accesorios\ cate.jpg") ;
+    background-size: 300px;
+}
+.contenedor-super3{
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: space-between;
+    background-image: url("../Img/grupo\ mujeres.jpg") ;
+    background-size: 300px;
+}
+
+
 .contenedor-padre{
     display: flex;
     height: 500px;
