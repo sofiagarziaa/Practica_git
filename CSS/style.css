@@ -9,6 +9,8 @@
 body{
     font-family: 'Roboto', sans-serif;
     background: #f6f6f6;
+    margin: 0;
+    padding: 0;
 }
 .Subtitulo {
     font-family: kanit ;
@@ -17,24 +19,42 @@ body{
     text-align: left;
     color:rgb(106, 58, 58);
 }
-/*
-background-image{
-    URL(.)
-}*/
-.contenedorPadre {
+
+header {
+    background-color: #333;
+    color: #fff;
+    padding: 20px;
     display: flex;
-    flex-wrap: wrap;
-    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
 }
-.Producto{
-        flex-direction:row;
-        width: 120px;
-        height: 140px;
+
+.logo img {
+    max-width: 150px;
 }
-    
-.Carrito{
-        width: 120px;
-    }
+
+nav ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+nav ul li {
+    display: inline;
+    margin-right: 20px;
+}
+
+nav ul li a {
+    color: #fff;
+    text-decoration: none;
+}
+
+footer {
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    padding: 10px;
+}
     
 
 
