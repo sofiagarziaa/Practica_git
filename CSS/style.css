@@ -1,10 +1,17 @@
+h2 {
+    background-color: #0b1729;
+    color: #fff;
+    padding: 20px;
+}
 .contenedor-super {
     display: flex;
     flex-wrap: wrap;
     flex-direction: row;
     justify-content: space-between;
-    background-image: url("../Img/grupo\ hombre.jpg") ;
+    background-image: url("../Img/accesorios_2.jpg") ;
     background-size: 85%;
+    padding-bottom: 2%;
+    align-items: center;
     
 }
 .contenedor-super2{
@@ -12,74 +19,97 @@
     flex-wrap: wrap;
     flex-direction: row;
     justify-content: space-between;
-    background-image: url("../Img/accesorios\ cate.jpg") ;
-    background-size: 300px;
+    background-image: url("../Img/hombres.jpg") ;
+    background-size: 85%;
+    padding-bottom: 2%;
+    align-items: center;
 }
 .contenedor-super3{
     display: flex;
     flex-wrap: wrap;
     flex-direction: row;
     justify-content: space-between;
-    background-image: url("../Img/grupo\ mujeres.jpg") ;
-    background-size: 300px;
+    background-image: url("../Img/mujeres.jpg") ;
+    background-size: 85%;
+    padding-bottom: 2%;
+    align-items: center;
+}
+
+.contenedor-super4{
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: space-between;
+    background-image: url("../Img/electronica.jpg") ;
+    background-size: 85%;
+    padding-bottom: 2%;
+    align-items: center;
 }
 
 
 .contenedor-padre{
     display: flex;
-    height: 500px;
     flex-wrap: wrap;
-    flex-direction: row;
     justify-content: space-between;
 }
 
 .elemento-hijo {
-    width: calc(20% - 20px);
-    margin-bottom: 20px;
-    border: 1px solid #9f6540;
+    flex: 1; /* Todos los elementos tendrán el mismo tamaño */
+    margin: 0 10px 20px; /* Agrega un margen horizontal de 10px y un margen inferior de 20px */
+    border: 1px solid #0b1729;
     padding: 20px;
-    background-color: #673412;
+    background-color: #0b1729;
+    padding-bottom: 2%;
+    align-items: center;
+    box-sizing: border-box;
 }
 
-@media screen and (max-width: 768px) {
-    .elemento-hijo {
+img {
+    max-width: 30%;
+    height: auto;
+}
+
+@media screen and (max-width: 390px) {
+    .contenedor-padre {
         flex-direction: column; /* Cambia la dirección del flexbox a columna */
     }
 
     .elemento-hijo {
-        width: 100%; /* Ancho completo en dispositivos pequeños */
+        width: calc(100% - 20px); /* Ancho completo en dispositivos pequeños */
     }
 }
 
 .categoria {
 
-    padding: 15px;
+    padding: 20px;
     margin: 15px;
+    display: flex;
 }
 .Titulo {
     font-family: oswald ;
     font-size: 45px;
     font-weight: normal;
     text-align: center;
-    color:brown
+    color: #0b1729;
 }
 
 body{
-    font-family: 'Roboto', sans-serif;
+    font-family: oswald;
     background: #f6f6f6;
     margin: 0px;
     padding: 0px;
+    color: #f6f6f6;
 }
 .Subtitulo {
     font-family: kanit ;
     font-size: 25px;
     font-weight: normal;
     text-align: left;
-    color:rgb(106, 58, 58);
+    color: #0b1729;
 }
 
 header {
-    background-color: #673412;
+    background-color: #0b1729;
     color: #fff;
     padding: 20px;
     display: flex;
@@ -108,7 +138,7 @@ nav ul li a {
 }
 
 footer {
-    background-color: #673412;
+    background-color:  #0b1729;
     color: #fff;
     text-align: center;
     padding: 10px;
