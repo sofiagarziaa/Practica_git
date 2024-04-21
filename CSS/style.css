@@ -1,5 +1,5 @@
 h2 {
-    background-color: #0b1729;
+    background-color: #58492e;
     color: #fff;
     padding: 20px;
 }
@@ -79,9 +79,9 @@ h2 {
 .elemento-hijo {
     flex: 1; /* Todos los elementos tendrán el mismo tamaño */
     margin: 0 10px 20px; /* Agrega un margen horizontal de 10px y un margen inferior de 20px */
-    border: 1px solid #0b1729;
+    border: 1px solid #3e3713;
     padding: 20px;
-    background-color: #0b1729;
+    background-color: #3f3315;
     padding-bottom: 2%;
     align-items: center;
     box-sizing: border-box;
@@ -144,7 +144,7 @@ body{
 }
 
 header {
-    background-color: #0b1729;
+    background-color: #eaca9b;
     color: #fff;
     padding: 20px;
     display: flex;
@@ -173,12 +173,53 @@ nav ul li a {
 }
 
 footer {
-    background-color:  #0b1729;
+    background-color:  #d5b68c;
     color: #fff;
     text-align: center;
     padding: 10px;
     margin: 0px;
 }
-    
 
+
+.login-container {
+    width: 300px;
+    margin: 100px auto;
+    padding: 20px;
+    background-color: #3d4474;
+    border-radius: 5px; 
+    box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.1);
+}
+.login-container h2 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+.form-group {
+    margin-bottom: 20px;
+}
+.form-group label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+.form-group input[type="text"],
+
+.form-group input[type="password"] {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+}
+.form-group button {
+    width: 100%;
+    padding: 10px;
+    background-color: #e5bb91;
+    color: #ffffff;
+    border: none;
+    border-radius: 3px;
+    
+}
+.form-group button:hover {
+    background-color: #80694b;
+}
 
