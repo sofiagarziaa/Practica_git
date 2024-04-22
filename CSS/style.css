@@ -87,13 +87,6 @@ h2 {
     box-sizing: border-box;
 }
 
-<<<<<<< HEAD
-.elemento-hijo {
-        flex-direction: column;
-        width: 768px
-    }
-
-=======
 
 @media screen and (max-width: 390px) {
     .contenedor-padre {
@@ -105,7 +98,6 @@ h2 {
     }
 }
 
->>>>>>> a8b7614db58d481ba343a86c7d6dc1ce2905c467
 .categoria {
 
     padding: 20px;
