@@ -1,5 +1,5 @@
 h2 {
-    background-color: #58492e;
+    background-color: #040403;
     color: #fff;
     padding: 20px;
 }
@@ -77,11 +77,11 @@ h2 {
 }
 
 .elemento-hijo {
-    flex: 1; /* Todos los elementos tendrán el mismo tamaño */
-    margin: 0 10px 20px; /* Agrega un margen horizontal de 10px y un margen inferior de 20px */
-    border: 1px solid #3e3713;
+    flex: 1; 
+    margin: 0 10px 20px; 
+    border: 1px solid #00000067;
     padding: 20px;
-    background-color: #3f3315;
+    background-color: #00000067;
     padding-bottom: 2%;
     align-items: center;
     box-sizing: border-box;
@@ -94,10 +94,6 @@ h2 {
     }
 
 =======
-img {
-    max-width: 30%;
-    height: auto;
-}
 
 @media screen and (max-width: 390px) {
     .contenedor-padre {
@@ -186,7 +182,7 @@ footer {
     margin: 100px auto;
     padding: 20px;
     background-color: #c39e82;
-    border-radius: 5px; 
+    border-radius: 10px; 
 }
 .login-container h2 {
     text-align: center;
@@ -195,6 +191,7 @@ footer {
 .form-group {
     margin-bottom: 20px;
 }
+
 .form-group label {
     display: block;
     font-weight: bold;
@@ -212,7 +209,7 @@ footer {
 .form-group button {
     width: 100%;
     padding: 10px;
-    background-color: #e5bb91;
+    background-color: #000000;
     color: #ffffff;
     border: none;
     border-radius: 3px;
@@ -221,6 +218,7 @@ footer {
 .form-group button:hover {
     background-color: #80694b;
 }
+
 
 a {
     color: rgb(111, 85, 49); 
