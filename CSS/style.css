@@ -119,17 +119,6 @@ body {
         width: 768px
     }
 
-
-@media screen and (max-width: 390px) {
-    .conteneiner-padre {
-        flex-direction: column; /* Cambia la dirección del flexbox a columna */
-    }
-
-    .element-hijo {
-        width: calc(100% - 20px); /* Ancho completo en dispositivos pequeños */
-    }
-}
-
 .categoria{
     flex-wrap: wrap;
     flex-direction: row;
@@ -207,7 +196,7 @@ footer {
     padding: 10px;
     margin: 0px;
 }
-.login{
+.login-registro{
     width: 300px;
     margin: 200px auto;
     padding: 20px 40px 20px 20px;
