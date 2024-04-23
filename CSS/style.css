@@ -115,12 +115,15 @@ body {
 }
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 .element-hijo {
         flex-direction: column;
         width: 768px
     }
 
 =======
+=======
+>>>>>>> 8655814a57163a5ca04015a5e867c6c15afb3fc6
 
 @media screen and (max-width: 390px) {
     .conteneiner-padre {
@@ -132,7 +135,11 @@ body {
     }
 }
 
+<<<<<<< HEAD
 >>>>>>> a8b7614db58d481ba343a86c7d6dc1ce2905c467
+=======
+.categoria {
+>>>>>>> 8655814a57163a5ca04015a5e867c6c15afb3fc6
 
 .categoria{
     flex-wrap: wrap;
