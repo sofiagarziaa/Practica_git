@@ -193,6 +193,7 @@ h2 {
     text-align: center;
     margin-bottom: 20px;
 }
+
 /*DISEÑO BOTONES*/
 
 a {
@@ -240,14 +241,14 @@ footer {
     width: 768px
 }
 
-
+/*DISEÑO RESPONSIVE*/
 @media screen and (max-width: 390px) {
 .conteneiner-padre {
-    flex-direction: column; /* Cambia la dirección del flexbox a columna */
+    flex-direction: column;
 }
 
 .element-hijo {
-    width: calc(100% - 20px); /* Ancho completo en dispositivos pequeños */
+    width: calc(100% - 20px);
 }
 }
 

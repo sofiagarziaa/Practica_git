@@ -5,7 +5,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login</title>
-    <link rel="stylesheet" href=".//css/style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
@@ -29,6 +28,7 @@
                 <li class="category"><a href="./cart.html">Carrito</a></li>
                 <li class="category"><a href="./login.html">Login</a></li>
                 <li class="category"><a href="./registro.html">Registro</a></li>
+                <li class="category"><a href="./recover.html">Recupero de Contraseña</a></li>
             </ul>
         </nav>
     </header>
@@ -39,18 +39,21 @@
             <form action="./results.html" method="GET">
                 <h2>Registro</h2>
                 <div class="input-group">
-                    <label for="nombre">Nombre:</label>
-                    <input type="nombre" id="texto" name="nombre" required>
-                </div>
-                <div class="input-group">
                     <label for="email">Email:</label>
-                    <input type="email" id="email" name="email" required>
+                    <input type="email" id="texto" name="email" required>
                 </div>
                 <div class="input-group">
                     <label for="password">Contraseña:</label>
+                    <input type="password" id="texto" name="password" required>
+                </div>
+                <div class="input-group">
+                    <label for="password">Repetir contraseña:</label>
                     <input type="password" id="text" name="password" required>
                 </div>
-                <button type="submit">Registrarse</button>
+                <article>
+                    Acepto los términos y condiciones. <input type="checkbox" name="tyc" value="0">
+                </article>
+                <button type="submit">Registrarme</button>
                 <div class="links">
                     <a href="login.html">Ya tengo cuenta</a>
                 </div>
