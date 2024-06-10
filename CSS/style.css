@@ -85,7 +85,7 @@ h2 {
     flex-direction: row;
     justify-content: space-between;
     background-image: url("../Img/fondo.jpg") ;
-    background-size: 100%;
+    background-size: 1024px;
     padding-bottom: 2%;
     align-items: center;  
 }
@@ -269,14 +269,11 @@ footer {
 }
 
 /*DISEÑO RESPONSIVE*/
-@media screen and (max-width: 430px) {
-.contenedor-padre {
-    flex-direction: column;
+@media screen and (min-width: 768) {
+    
 }
-
-.elemento-hijo {
-    width: calc(70% - 50px);
-}
+@media screen and (min-width: 1024) {
+    
 }
 
 
