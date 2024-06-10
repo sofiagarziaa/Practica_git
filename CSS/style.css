@@ -132,6 +132,26 @@ h2 {
     align-self: center;
 }
 
+.contenedor-carrito{
+    flex-wrap: wrap;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-self: center;
+    max-width: 50%;    
+    max-height: 50%;
+}
+
+.elemento-hijo{
+    flex-wrap: wrap;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-self: center;
+    max-width: 50%;    
+    max-height: 50%;
+}
+
 /*DISEÑO DE IMAGENES*/
 .img{
     display: flex;
@@ -146,7 +166,14 @@ h2 {
     max-width: 150px;
 }
 
-
+.imge{
+    display: flex;
+    flex-wrap: wrap;
+    top: 10%;
+    left: 10%;
+    max-width: 40%;    
+    max-height: 40%;
+} 
 
 /*DISEÑO CAJAS DE FORMULARIOS*/
 .form-group {
@@ -242,13 +269,13 @@ footer {
 }
 
 /*DISEÑO RESPONSIVE*/
-@media screen and (max-width: 390px) {
-.conteneiner-padre {
+@media screen and (max-width: 430px) {
+.contenedor-padre {
     flex-direction: column;
 }
 
-.element-hijo {
-    width: calc(100% - 20px);
+.elemento-hijo {
+    width: calc(70% - 50px);
 }
 }
 
