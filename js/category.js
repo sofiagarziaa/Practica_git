@@ -6,7 +6,7 @@ document.addEventListener('DOMContentLoaded', function () {
         .then(function (res) {
             return res.json();
         })
-        .then(function (dato) {
+        .then(function (data) {
             let contenido = "";
 
             for (let i = 0; i < data.length; i++) {
