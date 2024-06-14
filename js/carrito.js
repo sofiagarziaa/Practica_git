@@ -1,17 +1,16 @@
-document.addEventListener('DOMContentLoaded', function () {
-    const carritoList = document.querySelector("#carrito-list");
-    const totalCarrito = document.querySelector("#total-carrito");
+const carritoList = document.querySelector("#carrito-list");
+const totalCarrito = document.querySelector("#total-carrito");
 
-    let productosEnCarrito = JSON.parse(localStorage.getItem("productosEnCarrito")) || [];
+let productosEnCarrito = JSON.parse(localStorage.getItem("productosEnCarrito")) || [];
 
-    mostrarProductosEnCarrito(productosEnCarrito);
+mostrarProductosEnCarrito(productosEnCarrito);
 
-    function mostrarProductosEnCarrito(productos) {
-        let total = 0;
-        carritoList.innerHTML = "";
+function mostrarProductosEnCarrito(productos) {
+    let total = 0;
+    carritoList.innerHTML = "";
 
-        productos.forEach(producto => {
-            let itemHTML = `
+    productos.forEach(producto => {
+        let itemHTML = `
                 <li>
                     <img src="${producto.image}" alt="${producto.title}" width="100" />
                     <p>${producto.title}</p>
@@ -20,10 +19,10 @@ document.addEventListener('DOMContentLoaded', function () {
                     <p>${producto.category}</p>
                 </li>
             `;
-            carritoList.innerHTML += itemHTML;
-            total += producto.price;
-        });
+        carritoList.innerHTML += itemHTML;
+        total += producto.price;
+    });
 
-        totalCarrito.innerHTML = `<h3>Total: $${total.toFixed(2)}</h3>`;
-    }
-});
+    totalCarrito.innerHTML = `<h3>Total: $${total.toFixed(2)}</h3>`;
+}
+

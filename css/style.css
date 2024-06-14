@@ -146,7 +146,31 @@ h2 {
     left: 50%;
     max-width: 100%;
     max-height: 100%;
+
 }
+
+.elemento-hijo {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    margin: 10px;
+    border: 1px solid #00000067;
+    background-color: #00000067;
+    box-sizing: border-box;
+    text-align: center;
+}
+
+.elemento-hijo img {
+    width: 100%;
+    height: auto;
+    max-height: 200px; /* Altura máxima deseada */
+}
+
+
+
+
 
 .logo img {
     max-width: 150px;
