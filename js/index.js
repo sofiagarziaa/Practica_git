@@ -26,7 +26,7 @@ fetch('https://fakestoreapi.com/products/category/jewelery')
         verMasButtons.forEach(button => {
             button.addEventListener("click", function (event) {
                 let url = this.getAttribute("href");
-                window.location.href = url;
+                location.href = url;
             });
         });
 

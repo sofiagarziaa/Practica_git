@@ -1,14 +1,14 @@
 const carritoList = document.querySelector("#carrito-list");
 const totalCarrito = document.querySelector("#total-carrito");
-const finalizarCompraBtn = document.querySelector("#finalizar-compra-btn");
+const finalizarCompraBtn = document.querySelector(".buy-btn");
 
 let productosEnCarrito = JSON.parse(localStorage.getItem("productosEnCarrito")) || [];
 
 mostrarProductosEnCarrito(productosEnCarrito);
 
 function mostrarProductosEnCarrito(productos) {
-    carritoList.innerHTML = "";
     let total = 0;
+    carritoList.innerHTML = "";
 
     if (productos.length === 0) {
         totalCarrito.innerHTML = `<h3>Su carrito está vacío</h3>`;
@@ -16,15 +16,13 @@ function mostrarProductosEnCarrito(productos) {
     } else {
         productos.forEach(producto => {
             let itemHTML = `
-                    <li>
-                        <div>
+                        <div class= "elemento-hijo">
                             <img src="${producto.image}" alt="${producto.title}" width="100" />
                             <p>${producto.title}</p>
                             <p>Description: ${producto.description}</p>
                             <p>$${producto.price}</p>
                             <p>${producto.category}</p>
                         </div>
-                    </li>
                 `;
             carritoList.innerHTML += itemHTML;
             total += producto.price;
@@ -36,13 +34,10 @@ function mostrarProductosEnCarrito(productos) {
 }
 
 finalizarCompraBtn.addEventListener('click', function () {
-    // Limpiar localStorage
+
     localStorage.removeItem("productosEnCarrito");
 
-    // Mostrar mensaje de agradecimiento
     alert("¡Gracias por tu compra!");
 
-    // Redirigir al usuario a la página principal
-    window.location.href = "./index.html";
+    location.replace("./index.html");
 });
-
