@@ -17,12 +17,12 @@ document.addEventListener('DOMContentLoaded', function () {
                         <p>Description: ${data[i].description}</p>
                         <p>$${data[i].price}</p>
                         <p>${data[i].category}</p>
-                        <a href="./jewelery.html?id=${data[i].id}" class="ver-mas-btn">Ver más</a>
+                        <a href="./producto.html?id=${data[i].id}" class="ver-mas-btn">Ver más</a>
                     </div>`;
             }
             accesoryIn.innerHTML = contenido;
 
-            let verMasButtons = document.querySelectorAll(".ver-mas-boton");
+            let verMasButtons = document.querySelectorAll(".ver-mas-btn");
             verMasButtons.forEach(button => {
                 button.addEventListener("click", function(event) {
                     let url = this.getAttribute("href");
@@ -55,12 +55,12 @@ document.addEventListener('DOMContentLoaded', function () {
                         <p>Description: ${data[i].description}</p>
                         <p>$${data[i].price}</p>
                         <p>${data[i].category}</p>
-                        <a href="./jewelery.html?id=${data[i].id}" class="ver-mas-boton">Ver más</a>
+                        <a href="./jewelery.html?id=${data[i].id}" class="ver-mas-btn">Ver más</a>
                     </li>`;
             }
             menIn.innerHTML = contenido;
 
-            let verMasButtons = document.querySelectorAll(".ver-mas-boton");
+            let verMasButtons = document.querySelectorAll(".ver-mas-btn");
             verMasButtons.forEach(button => {
                 button.addEventListener("click", function(event) {
                     let url = this.getAttribute("href");
