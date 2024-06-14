@@ -7,24 +7,30 @@ document.addEventListener('DOMContentLoaded', function () {
     mostrarProductosEnCarrito(productosEnCarrito);
 
     function mostrarProductosEnCarrito(productos) {
+        
         let total = 0;
         carritoList.innerHTML = "";
+        if productos != carritosList{
+            let noAnda= ("su carrito esta vacio")
+            console.log (noAnda)
+        }else if{
 
-        productos.forEach(producto => {
+        for productos.forEach(producto => {
             let itemHTML = `
-                <li>
+                <div>
                     <img src="${producto.image}" alt="${producto.title}" width="100" />
                     <p>${producto.title}</p>
                     <p>Description: ${producto.description}</p>
                     <p>$${producto.price}</p>
                     <p>${producto.category}</p>
-                </li>
+                </div>
             `;
             carritoList.innerHTML += itemHTML;
             total += producto.price;
         });
 
         totalCarrito.innerHTML = `<h3>Total: $${total.toFixed(2)}</h3>`;
+        }
     }
 });
 
