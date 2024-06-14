@@ -1,39 +1,50 @@
 document.addEventListener('DOMContentLoaded', function () {
     const carritoList = document.querySelector("#carrito-list");
     const totalCarrito = document.querySelector("#total-carrito");
+    const finalizarCompraBtn = document.querySelector("#finalizar-compra-btn");
 
+    // Obtener productos del localStorage
     let productosEnCarrito = JSON.parse(localStorage.getItem("productosEnCarrito")) || [];
 
     mostrarProductosEnCarrito(productosEnCarrito);
 
     function mostrarProductosEnCarrito(productos) {
-        
-        let total = 0;
         carritoList.innerHTML = "";
-        if productos != carritosList{
-            let noAnda= ("su carrito esta vacio")
-            console.log (noAnda)
-        }else if{
+        let total = 0;
 
-        for productos.forEach(producto => {
-            let itemHTML = `
-                <div>
-                    <img src="${producto.image}" alt="${producto.title}" width="100" />
-                    <p>${producto.title}</p>
-                    <p>Description: ${producto.description}</p>
-                    <p>$${producto.price}</p>
-                    <p>${producto.category}</p>
-                </div>
-            `;
-            carritoList.innerHTML += itemHTML;
-            total += producto.price;
-        });
+        if (productos.length === 0) {
+            totalCarrito.innerHTML = `<h3>Su carrito está vacío</h3>`;
+            finalizarCompraBtn.classList.add('hidden');
+        } else {
+            productos.forEach(producto => {
+                let itemHTML = `
+                    <li>
+                        <div>
+                            <img src="${producto.image}" alt="${producto.title}" width="100" />
+                            <p>${producto.title}</p>
+                            <p>Description: ${producto.description}</p>
+                            <p>$${producto.price}</p>
+                            <p>${producto.category}</p>
+                        </div>
+                    </li>
+                `;
+                carritoList.innerHTML += itemHTML;
+                total += producto.price;
+            });
 
-        totalCarrito.innerHTML = `<h3>Total: $${total.toFixed(2)}</h3>`;
+            totalCarrito.innerHTML = `<h3>Total: $${total.toFixed(2)}</h3>`;
+            finalizarCompraBtn.classList.remove('hidden');
         }
     }
-});
 
-window.addEventListener('beforeunload', function () {
-    localStorage.removeItem("productosEnCarrito");
+    finalizarCompraBtn.addEventListener('click', function () {
+        // Limpiar localStorage
+        localStorage.removeItem("productosEnCarrito");
+
+        // Mostrar mensaje de agradecimiento
+        alert("¡Gracias por tu compra!");
+
+        // Redirigir al usuario a la página principal
+        window.location.href = "./index.html";
+    });
 });
