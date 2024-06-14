@@ -1,6 +1,6 @@
 
-//ACCESORIOS
 document.addEventListener('DOMContentLoaded', function () {
+    // ACCESORIOS
     let accesoryIn = document.querySelector("#jewelery");
 
     fetch('https://fakestoreapi.com/products/category/jewelery')
@@ -18,14 +18,15 @@ document.addEventListener('DOMContentLoaded', function () {
                         <p>Description: ${data[i].description}</p>
                         <p>$${data[i].price}</p>
                         <p>${data[i].category}</p>
-                        <a href="./jewelery.html?id=${data[i].id}" class="ver-mas-btn">Ver más</a>
+                        <a href="./category.html?id=${data[i].id}" class="ver-mas-btn">Ver más</a>
                     </div>`;
             }
             accesoryIn.innerHTML = contenido;
 
-            let verMasButtons = document.querySelectorAll(".ver-mas-boton");
+            let verMasButtons = document.querySelectorAll(".ver-mas-btn");
             verMasButtons.forEach(button => {
                 button.addEventListener("click", function(event) {
+                    event.preventDefault();
                     let url = this.getAttribute("href");
                     window.location.href = url;
                 });
@@ -35,10 +36,8 @@ document.addEventListener('DOMContentLoaded', function () {
         .catch(function (error) {
             console.error('Error fetching products:', error);
         });
-});
 
-//MEN:
-document.addEventListener('DOMContentLoaded', function () {
+    // MEN:
     let menIn = document.querySelector("#men");
 
     fetch("https://fakestoreapi.com/products/category/men's clothing")
@@ -56,14 +55,15 @@ document.addEventListener('DOMContentLoaded', function () {
                         <p>Description: ${data[i].description}</p>
                         <p>$${data[i].price}</p>
                         <p>${data[i].category}</p>
-                        <a href="./jewelery.html?id=${data[i].id}" class="ver-mas-boton">Ver más</a>
+                        <a href="./category.html?id=${data[i].id}" class="ver-mas-btn">Ver más</a>
                     </div>`;
             }
             menIn.innerHTML = contenido;
 
-            let verButtons = document.querySelectorAll(".ver-mas-boton");
+            let verMasButtons = document.querySelectorAll(".ver-mas-btn");
             verMasButtons.forEach(button => {
                 button.addEventListener("click", function(event) {
+                    event.preventDefault();
                     let url = this.getAttribute("href");
                     window.location.href = url;
                 });
@@ -73,10 +73,8 @@ document.addEventListener('DOMContentLoaded', function () {
         .catch(function (error) {
             console.error('Error fetching products:', error);
         });
-});
 
-/*MUJER*/
-document.addEventListener('DOMContentLoaded', function () {
+    // MUJER:
     let womenIn = document.querySelector("#women");
 
     fetch("https://fakestoreapi.com/products/category/women's clothing")
@@ -94,14 +92,15 @@ document.addEventListener('DOMContentLoaded', function () {
                         <p>Description: ${data[i].description}</p>
                         <p>$${data[i].price}</p>
                         <p>${data[i].category}</p>
-                        <a href="./jewelery.html?id=${data[i].id}" class="ver-mas-boton">Ver más</a>
+                        <a href="./category.html?id=${data[i].id}" class="ver-mas-btn">Ver más</a>
                     </div>`;
             }
             womenIn.innerHTML = contenido;
 
-            let verMasButtons = document.querySelectorAll(".ver-mas-boton");
+            let verMasButtons = document.querySelectorAll(".ver-mas-btn");
             verMasButtons.forEach(button => {
                 button.addEventListener("click", function(event) {
+                    event.preventDefault();
                     let url = this.getAttribute("href");
                     window.location.href = url;
                 });
