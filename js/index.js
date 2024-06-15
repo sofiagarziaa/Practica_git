@@ -21,7 +21,7 @@ fetch(url)
                         <p>Description: ${data[i].description}</p>
                         <p>$${data[i].price}</p>
                         <p>${data[i].category}</p>
-                        <a href="./producto.html?id=${data[i].id}" class="ver-mas-btn">Ver más</a>
+                        <a href="./category.html?id=${data[i].id}" class="ver-mas-btn">Ver más</a>
                     </div>`;
         }
         console.log(contenido);
