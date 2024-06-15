@@ -1,50 +1,43 @@
-document.addEventListener('DOMContentLoaded', function () {
-    const carritoList = document.querySelector("#carrito-list");
-    const totalCarrito = document.querySelector("#total-carrito");
-    const finalizarCompraBtn = document.querySelector("#finalizar-compra-btn");
+const carritoList = document.querySelector("#carrito-list");
+const totalCarrito = document.querySelector("#total-carrito");
+const finalizarCompraBtn = document.querySelector(".buy-btn");
 
-    // Obtener productos del localStorage
-    let productosEnCarrito = JSON.parse(localStorage.getItem("productosEnCarrito")) || [];
+let productosEnCarrito = JSON.parse(localStorage.getItem("productosEnCarrito")) || [];
 
-    mostrarProductosEnCarrito(productosEnCarrito);
+mostrarProductosEnCarrito(productosEnCarrito);
 
-    function mostrarProductosEnCarrito(productos) {
-        carritoList.innerHTML = "";
-        let total = 0;
+function mostrarProductosEnCarrito(productos) {
+    let total = 0;
+    carritoList.innerHTML = "";
 
-        if (productos.length === 0) {
-            totalCarrito.innerHTML = `<h3>Su carrito está vacío</h3>`;
-            finalizarCompraBtn.classList.add('hidden');
-        } else {
-            productos.forEach(producto => {
-                let itemHTML = `
-                    <li>
-                        <div>
+    if (productos.length === 0) {
+        totalCarrito.innerHTML = `<h3>Su carrito está vacío</h3>`;
+        finalizarCompraBtn.classList.add('hidden');
+    } else {
+        productos.forEach(producto => {
+            let itemHTML = `
+                        <div class= "elemento-hijo">
                             <img src="${producto.image}" alt="${producto.title}" width="100" />
                             <p>${producto.title}</p>
                             <p>Description: ${producto.description}</p>
                             <p>$${producto.price}</p>
                             <p>${producto.category}</p>
                         </div>
-                    </li>
                 `;
-                carritoList.innerHTML += itemHTML;
-                total += producto.price;
-            });
+            carritoList.innerHTML += itemHTML;
+            total += producto.price;
+        });
 
-            totalCarrito.innerHTML = `<h3>Total: $${total.toFixed(2)}</h3>`;
-            finalizarCompraBtn.classList.remove('hidden');
-        }
+        totalCarrito.innerHTML = `<h3>Total: $${total.toFixed(2)}</h3>`;
+        finalizarCompraBtn.classList.remove('hidden');
     }
+}
 
-    finalizarCompraBtn.addEventListener('click', function () {
-        // Limpiar localStorage
-        localStorage.removeItem("productosEnCarrito");
+finalizarCompraBtn.addEventListener('click', function () {
 
-        // Mostrar mensaje de agradecimiento
-        alert("¡Gracias por tu compra!");
+    localStorage.removeItem("productosEnCarrito");
 
-        // Redirigir al usuario a la página principal
-        window.location.href = "./index.html";
-    });
+    alert("¡Gracias por tu compra!");
+
+    location.replace("./index.html");
 });
