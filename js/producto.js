@@ -8,7 +8,7 @@ document.addEventListener('DOMContentLoaded', function () {
         .then(function (dato) {
             let contenido = "";
 
-            for (let i = ; i < data.length; i++) {
+            for (let i = 0 ; i < data.length; i++) {
                 contenido += `
                     <div class="elemento-hijo">
                         <img src="${data[i].image}" alt="${data[i].title}" width="100" />
