@@ -1,43 +1,44 @@
-document.addEventListener('DOMContentLoaded', function () {
-    let productIn = document.querySelector("#categoria");
-    let categoriaTitulo = document.querySelector("h2");
+let qs = location.search;
+let qsto = new URLSearchParams(qs);
+let category = qsto.get('category');
+let url = `https://fakestoreapi.com/products/category/${category}`
 
-    fetch("https://fakestoreapi.com/products/category")
-        .then(function (res) {
-            return res.json();
-        })
-        .then(function (data) {
-            let contenido = "";
 
-            for (let i = 0; i < data.length; i++) {
-                let producto = data[i];
-                contenidoHTML += `
-                    <div class="elemento-hijo">
-                        <img src="${producto.image}" alt="${producto.title}" width="100" />
-                        <p>${producto.title}</p>
-                        <p>Description: ${producto.description}</p>
-                        <p>$${producto.price}</p>
-                        <p>${producto.category}</p>
-                        <button class="agregar-al-carrito-btn" data-id="${producto.id}">Agregar al carrito</button>
-                    </div>`;
-            }
-            productIn.innerHTML = contenido;
+fetch(url)
+    .then(function (res) {
+        return res.json();
+    })
+    .then(function (data) {
+        console.log(data);
+        let lista = document.querySelector("#category");
+        let categoryTitle = document.querySelector("h2");
+        categoryTitle.innerText = `${category}`;
+        let contenido = "";
+        for (let i = 0; i < data.length && i < 5; i++) {
+            contenido += `
+                                <div class="elemento-hijo">
+                                    <img src="${data[i].image}" alt="${data[i].title}" width="100" />
+                                    <p>${data[i].title}</p>
+                                    <p>Description: ${data[i].description}</p>
+                                    <p>$${data[i].price}</p>
+                                    <a href="./producto.html?id=${data[i].id}" class="ver-mas-btn">Ver más</a>
+                                </div>`;
+        }
+        console.log(contenido);
+        lista.innerHTML = contenido;
 
-            document.querySelectorAll(".agregar-al-carrito-btn").forEach(button => {
-                button.addEventListener("click", function() {
-                    let productId = this.dataset.id;
-                    let product = data.find(p => p.id == productId);
-                    agregarAlCarrito(product);
-                });
+        let verMasButtons = document.querySelectorAll(".ver-mas-btn");
+
+        for (let i = 0; i < verMasButtons.length; i++) {
+            verMasButtons[i].addEventListener("click", function (event) {
+                event.preventDefault();
+                const url = verMasButtons[i].href;
+                location.href = url;
             });
-        })
-        .catch(function (error) {
-            console.error('Error fetching products:', error);
-        });
+        }
 
-     function agregarAlCarrito(producto) {
-        let productosEnCarrito = JSON.parse(localStorage.getItem("productosEnCarrito")) || [];
-        productosEnCarrito.push(producto);
-        localStorage.setItem("productosEnCarrito", JSON.stringify(productosEnCarrito));
-    }
-});
+    })
+    .catch(function (error) {
+        console.error('Error fetching products:', error);
+    });
+

@@ -4,6 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Categoría</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Anton&family=Kanit:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900&family=Oswald:wght@200..700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="./css/style.css">
 </head>
 <body>
@@ -15,25 +18,27 @@
         </div>
         <nav>
             <ul>
-                <li class="category"><a href="./category.html?category=men's clothing">Hombre</a></li>
-                <li class="category"><a href="./category.html?category=jewelery">Accesorios</a></li>
-                <li class="category"><a href="./category.html?category=women's clothing">Mujer</a></li>
-                <li class="category"><a href="./category.html?category=electronics">Electrónica</a></li>
-                <li class="category"><a href="./cart.html">Carrito</a></li>
+                <li class="category"><a href="./category.html?category=men's clothing">Men's clothing</a></li>
+                <li class="category"><a href="./category.html?category=jewelery">Jewelery</a></li>
+                <li class="category"><a href="./category.html?category=women's clothing">Women's clothing</a></li>
+                <li class="category"><a href="./category.html?category=electronics">Electronics</a></li>
+                <li class="category"><a href="./carrito.html">Cart</a></li>
                 <li class="category"><a href="./login.html">Login</a></li>
-                <li class="category"><a href="./registro.html">Registro</a></li>
-                <li class="category"><a href="./recover.html">Recupero de Contraseña</a></li>
+                <li class="category"><a href="./registro.html">Sign Up</a></li>
+                <li class="category"><a href="./recover.html">Recover</a></li>
             </ul>
         </nav>
     </header>
-    <main>
-        <h1 id="category-title"></h1>
-        <div id="products-container" class="product-grid"></div>
-    </main>
+    <section class="categoria">
+        <div class="contenedor-super">
+            <h2></h2>
+            <div id="category" class="contenedor-padre"></div>
+        </div>
+    </section>
     <footer>
         <p>Zora ARG™</p>
         <p>Tiara Arredondo, Sofia Garzia</p>
     </footer>
-    <script src="./js/category.js"></script>
+    <script src="js/category.js"></script>
 </body>
 </html>
