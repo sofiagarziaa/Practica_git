@@ -15,6 +15,7 @@ if (!id) {
     // Construir la URL de la API con el id del producto
     let url = `https://fakestoreapi.com/products/${id}`;
 
+<<<<<<< HEAD
     // Realizar la solicitud fetch
     fetch(url)
         .then(function (res) {
@@ -29,6 +30,9 @@ if (!id) {
             let image = document.querySelector("img");
             let status = document.querySelector(".status");
             let especie = document.querySelector(".especie");
+=======
+let url = `https://fakestoreapi.com/products/categories/${id}`;
+>>>>>>> 3e4d130a5fd0297a6f60ab593c5d861e4a7e62ae
 
             title.innerText = data.title; // Ajustar según la estructura del objeto de respuesta
             image.src = data.image;
@@ -76,6 +80,7 @@ fetch(url)
     .then(function(response){
         return response.json();
     })
+<<<<<<< HEAD
     .then(function(data){
         console.log(data);
 
@@ -90,6 +95,28 @@ fetch(url)
         image.src=data.image;
         status.innerText += data.status;
         especie.innerText += data.species;      
+=======
+    .then(function (data) {
+        console.log(data);
+        let title = document.querySelector("h1");
+        title.innerText = `${title}`;
+        let image = document.querySelector(".img");
+        let status = document.querySelector(".status");
+        let especie = document.querySelector(".especies");
+        image.src = data.image;
+        status.innerText += data.status;
+        especie.innerText += data.species;
+
+    })
+    .catch(function (error) {
+        console.error(error);
+    });
+function agregarAlCarrito(producto) {
+    let productosEnCarrito = JSON.parse(localStorage.getItem("productosEnCarrito")) || [];
+    productosEnCarrito.push(producto);
+    localStorage.setItem("productosEnCarrito", JSON.stringify(productosEnCarrito));
+};
+>>>>>>> 3e4d130a5fd0297a6f60ab593c5d861e4a7e62ae
 
     })
     .catch(function(error){
