@@ -1,6 +1,5 @@
 console.log("producto.js");
 
-
 let qs = location.search;
 console.log("query string", qs);
 let qsto = new URLSearchParams(qs);
@@ -9,8 +8,11 @@ const productId = qsto.get('id');
 let apiUrl = `https://fakestoreapi.com/products/${productId}`;
 if (productId) {
     fetch(apiUrl)
-        .then(response => response.json())
-        .then(data => {
+        .then(function(response){
+            return response.json()
+        })
+        
+        .then(function(data) {
             let title = document.querySelector(".product-title");
             let image = document.querySelector(".product-image");
             let categoryLink = document.querySelector('.category-link');
@@ -29,7 +31,9 @@ if (productId) {
                 agregarAlCarrito(data);
             });
         })
-        .catch(error => console.error(error));
+        .catch(function(error){
+            return console.log(error)
+        });
 }
 
     function agregarAlCarrito(producto) {
