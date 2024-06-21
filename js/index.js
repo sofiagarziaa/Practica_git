@@ -1,6 +1,4 @@
 console.log("index.js");
-<<<<<<< HEAD
-=======
 let url = "https://fakestoreapi.com/products/category/jewelery"
 fetch(url)
     .then(function (res) {
@@ -38,7 +36,6 @@ fetch(url)
     .catch(function (error) {
         console.error('Error fetching products:', error);
     });
->>>>>>> 3e4d130a5fd0297a6f60ab593c5d861e4a7e62ae
 
 let url2 = "https://fakestoreapi.com/products/category/electronics"
 
@@ -87,10 +84,7 @@ fetch(url3)
     })
     .then(function (data) {
         console.log(data);
-<<<<<<< HEAD
         
-=======
->>>>>>> 3e4d130a5fd0297a6f60ab593c5d861e4a7e62ae
         let lista = document.querySelector("#mens-clothing-container");
         let contenido = "";
 
@@ -101,12 +95,8 @@ fetch(url3)
                                 <p>${data[i].title}</p>
                                 <p>Description: ${data[i].description}</p>
                                 <p>$${data[i].price}</p>
-<<<<<<< HEAD
                                 <p>${data[i].category}</p>
                                 <a href="producto.html?id=${data[i].id}" >Ver más</a>
-=======
-                                <a href="./producto.html?id=${data[i].id}" class="ver-mas-btn">Ver más</a>
->>>>>>> 3e4d130a5fd0297a6f60ab593c5d861e4a7e62ae
                             </div>`;
         }
         console.log(contenido);
