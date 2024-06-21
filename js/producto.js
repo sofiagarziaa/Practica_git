@@ -46,6 +46,7 @@ if (productId) {
 
         carrito.push(producto.id);
         localStorage.setItem("carItem", JSON.stringify(carrito));
-        alert(`Producto "${producto.title}" añadido al carrito`);
+        let anadido = alert(`Producto "${producto.title}" añadido al carrito`);
+        console.log(anadido);
         console.log("Carrito actualizado:", carrito);
     }

@@ -28,12 +28,12 @@ function mostrarProductosEnCarrito(carrito) {
             .then(res => res.json())
             .then(data => {
                 elementosCarrito += `
-                        <div class="contenedor-padre">
+                        <div class="elemento-hijo">
                             <img src="${data.image}" alt="${data.title}" width="100">
                             <p>${data.title}</p>
                             <p>Description: ${data.description}</p>
                             <p>$${data.price}</p>
-                            <a href="./producto.html?id=${data.id}" class="buy-btn add-to-cart">Ver más</a>
+                            
                         </div>`;
                 carritoList.innerHTML = elementosCarrito;
 
