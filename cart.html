@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Carrito de Compras - ZORA ARG</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -22,7 +22,7 @@
                 <li class="category"><a href="./category.html?category=jewelery">Jewelery</a></li>
                 <li class="category"><a href="./category.html?category=women's clothing">Women's clothing</a></li>
                 <li class="category"><a href="./category.html?category=electronics">Electronics</a></li>
-                <li class="category"><a href="./carrito.html">Cart</a></li>
+                <li class="category"><a href="./cart.html">Cart</a></li>
                 <li class="category"><a href="./login.html">Login</a></li>
                 <li class="category"><a href="./registro.html">Sign Up</a></li>
                 <li class="category"><a href="./recover.html">Recover</a></li>
@@ -30,14 +30,21 @@
         </nav>
     </header>
 
-    <main>
-        <h1>Mi carrito</h1>
-        <p class="empty"></p>
-        <section class="lista"></section>
-        <div class="finalizar-compra-container">
-            <a href="#" class="finalizar-compra-btn">Finalizar Compra</a>
+    <section class="cart">
+        <div class="contenedor-super">
+            <h1>Mi carrito</h1>
+            <p class="empty"></p>
+            <ul id="carrito-list" class="contenedor-padre">
+                <!-- Aquí se mostrarán los productos del carrito dinámicamente -->
+            </ul>
+            <div id="total-carrito" class="total-carrito">
+                <h3>Total: $0</h3>
+            </div>
+            <div class="finalizar-compra-container">
+                <button id="finalizarCompraBtn" class="buy-btn">Finalizar Compra</button>
+            </div>
         </div>
-    </main>
+    </section>
 
     <footer>
         <p>Zora ARG™</p>

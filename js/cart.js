@@ -1,39 +1,53 @@
-console.log(".cart.js")
-let recuperoStorage = localStorage.getItem("carItem");
-let lista = document.querySelector(".lista");
-let elementosCarrito = '';
+console.log(".cart.js");
 
-if (recuperoStorage == null) {
-    let mensaje = "Tu carrito esta vacio"
-    let empty = document.querySelector(".empty")
-    empty.innerText = mensaje
+let recuperoStorage = localStorage.getItem("carItem");
+let carritoList = document.getElementById("carrito-list");
+let totalCarrito = document.getElementById("total-carrito");
+
+if (recuperoStorage === null) {
+    mostrarCarritoVacio();
 } else {
-    carrito = [];
-    carrito = JSON.parse(recuperoStorage);
-    for (let i = 0; i < carrito.length; i++) {
-        const productId = carrito[i];
-        const apiUrl = `https://fakestoreapi.com/products/${productId}`;
+    let carrito = JSON.parse(recuperoStorage);
+    mostrarProductosEnCarrito(carrito);
+}
+
+function mostrarCarritoVacio() {
+    let mensaje = "Tu carrito está vacío";
+    let empty = document.querySelector(".empty");
+    empty.innerText = mensaje;
+}
+
+function mostrarProductosEnCarrito(carrito) {
+    let elementosCarrito = "";
+    let total = 0;
+
+    carrito.forEach(productId => {
+        let apiUrl = `https://fakestoreapi.com/products/${productId}`;
 
         fetch(apiUrl)
-            .then(function (res) {
-                return res.json();
-            })
-            .then(function (data) {
-                console.log(data);
-                elementosCarrito += `<div class="elemento-hijo">
-                                    <img src="${data[i].image}" alt="${data[i].title}" width="100" />
-                                    <p>${data[i].title}</p>
-                                    <p>Description: ${data[i].description}</p>
-                                    <p>$${data[i].price}</p>
-                                    <p>${data[i].category}</p>
-                                    <a href="./producto.html?id=${data[i].id}" class="ver-mas-btn">Ver más</a>
-                                </div>`;
-                lista.innerHTML = elementosCarrito
+            .then(res => res.json())
+            .then(data => {
+                elementosCarrito += `
+                        <div class="contenedor-padre">
+                            <img src="${data.image}" alt="${data.title}" width="100">
+                            <p>${data.title}</p>
+                            <p>Description: ${data.description}</p>
+                            <p>$${data.price}</p>
+                            <a href="./producto.html?id=${data.id}" class="buy-btn add-to-cart">Ver más</a>
+                        </div>`;
+                carritoList.innerHTML = elementosCarrito;
 
+                total += data.price;
+                totalCarrito.innerHTML = `<h3>Total: $${total.toFixed(2)}</h3>`;
             })
-            .catch(function(e){
-                console.log(e);
-
-            })
-    }
+            .catch(error => console.log(error));
+    });
 }
+
+let finalizarCompraBtn = document.getElementById("finalizarCompraBtn");
+finalizarCompraBtn.addEventListener("click", function () {
+    localStorage.removeItem("carItem");
+    alert("¡Gracias por tu compra!");
+    location.replace("./index.html");
+});
+
