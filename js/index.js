@@ -16,22 +16,11 @@ fetch(url)
                         <p>${data[i].title}</p>
                         <p>Description: ${data[i].description}</p>
                         <p>$${data[i].price}</p>
-                        <a href="./category.html?id=${data[i].id}" class="ver-mas-btn">Ver más</a>
+                        <a href="./producto.html?id=${data[i].id}" class="select">Ver más</a>
                     </div>`;
         }
         console.log(contenido);
         lista.innerHTML = contenido;
-
-        let verMasButtons = document.querySelectorAll(".ver-mas-btn");
-
-        for (let i = 0; i < verMasButtons.length; i++) {
-            verMasButtons[i].addEventListener("click", function (event) {
-                event.preventDefault();
-                const url = verMasButtons[i].href;
-                location.href = url;
-            });
-        }
-
     })
     .catch(function (error) {
         console.error('Error fetching products:', error);
@@ -60,17 +49,6 @@ fetch(url2)
         }
         console.log(contenido);
         lista.innerHTML = contenido;
-
-        let verMasButtons = document.querySelectorAll(".ver-mas-btn");
-
-        for (let i = 0; i < verMasButtons.length; i++) {
-            verMasButtons[i].addEventListener("click", function (event) {
-                event.preventDefault();
-                const url = verMasButtons[i].href;
-                location.href = url;
-            });
-        }
-
     })
     .catch(function (error) {
         console.error('Error fetching products:', error);
@@ -99,17 +77,6 @@ fetch(url3)
         }
         console.log(contenido);
         lista.innerHTML = contenido;
-
-        let verMasButtons = document.querySelectorAll(".ver-mas-btn");
-
-        for (let i = 0; i < verMasButtons.length; i++) {
-            verMasButtons[i].addEventListener("click", function (event) {
-                event.preventDefault();
-                const url = verMasButtons[i].href;
-                location.href = url;
-            });
-        }
-
     })
     .catch(function (error) {
         console.error('Error fetching products:', error);
@@ -138,17 +105,6 @@ fetch(url4)
         }
         console.log(contenido);
         lista.innerHTML = contenido;
-
-        let verMasButtons = document.querySelectorAll(".ver-mas-btn");
-
-        for (let i = 0; i < verMasButtons.length; i++) {
-            verMasButtons[i].addEventListener("click", function (event) {
-                event.preventDefault();
-                const url = verMasButtons[i].href;
-                location.href = url;
-            });
-        }
-
     })
     .catch(function (error) {
         console.error('Error fetching products:', error);

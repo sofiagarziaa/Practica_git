@@ -6,7 +6,7 @@ let qsto = new URLSearchParams(qs);
 const id = qsto.get('id');
 
 
-let url = `https://fakestoreapi.com/products/categories/${id}`;
+let url = `https://fakestoreapi.com/products/${id}`;
 
 
 fetch(url)
@@ -15,22 +15,35 @@ fetch(url)
     })
     .then(function (data) {
         console.log(data);
-        let title = document.querySelector("h1");
-        title.innerText = `${title}`;
-        let image = document.querySelector(".img");
-        let status = document.querySelector(".status");
-        let especie = document.querySelector(".especies");
+        let title = document.querySelector("h2");
+        let image = document.querySelector(".image");
+        let desc = document.querySelector(".desc");
+        let price = document.querySelector(".price");
+        title.innerText = data.title;
         image.src = data.image;
-        status.innerText += data.status;
-        especie.innerText += data.species;
+        desc.innerText += data.description;
+        price.innerText += `$${data.price}`;
 
     })
     .catch(function (error) {
         console.error(error);
-    });
-function agregarAlCarrito(producto) {
-    let productosEnCarrito = JSON.parse(localStorage.getItem("productosEnCarrito")) || [];
-    productosEnCarrito.push(producto);
-    localStorage.setItem("productosEnCarrito", JSON.stringify(productosEnCarrito));
-};
+    })
+
+let carrito = [];
+let recuperoStorage = localStorage.getItem("cartItems")
+
+if(recuperoStorage != null) {
+    carrito = JSON.parse(recuperoStorage)
+}
+
+let select = document.querySelector(".select")
+select.addEventListener("click", function(e){
+    e.preventDefault();
+    carrito.push(id)
+    let carStr = JSON.stringify(carrito)
+    localStorage.setItem("cartItems", carStr)
+
+    console.log("carrito", carrito)
+    console.log("localStore: ", localStorage)
+})
 
