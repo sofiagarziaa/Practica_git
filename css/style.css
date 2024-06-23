@@ -84,6 +84,7 @@ h2 {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
+    align-items: flex-start;
 }
 
 .elemento-hijo {
@@ -94,14 +95,15 @@ h2 {
     background-color: #00000067;
     padding-bottom: 2%;
     justify-content: center;
-    align-items: center;
+    align-items: flex-start; 
     box-sizing: border-box;
     border-image-width: auto;
     flex-direction: column;
-    align-self: center;
+    align-self: flex-start;
     flex-wrap: wrap;
     display: flex;
     text-align: center;
+    flex-direction: column;
 }
 
 
