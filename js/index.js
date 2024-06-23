@@ -17,7 +17,8 @@ fetch(url)
                         <p>Description: ${data[i].description}</p>
                         <p>$${data[i].price}</p>
                         <a href="./producto.html?id=${data[i].id}" class="select">Ver más</a>
-                    </div>`;
+                    </div> `
+                    ;
         }
         console.log(contenido);
         lista.innerHTML = contenido;
