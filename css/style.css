@@ -107,7 +107,6 @@ h2 {
     
 }
 
-
 .contenedor-carrito {
     flex-wrap: wrap;
     display: flex;
@@ -179,7 +178,11 @@ h2 {
     background-color: #c39e82;
     border-radius: 10px;
 }
+.margen {
+    margin: 10% auto;
+    padding: 40px 50px 20px 100px;
 
+}
 .login-container h2 {
     text-align: center;
     margin-bottom: 20px;
