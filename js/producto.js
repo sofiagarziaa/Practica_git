@@ -1,52 +1,78 @@
 console.log("producto.js");
 
 let qs = location.search;
-console.log("query string", qs);
+console.log("query string: ", qs);
 let qsto = new URLSearchParams(qs);
-const productId = qsto.get('id');
+const id = qsto.get('id');
 
-let apiUrl = `https://fakestoreapi.com/products/${productId}`;
-if (productId) {
-    fetch(apiUrl)
-        .then(function(response){
-            return response.json()
-        })
-        
-        .then(function(data) {
-            let title = document.querySelector(".product-title");
-            let image = document.querySelector(".product-image");
-            let categoryLink = document.querySelector('.category-link');
-            let status = document.querySelector(".product-category");
-            let especie = document.querySelector(".product-price");
+let url = `https://fakestoreapi.com/products/${id}`;
 
-            title.innerText = data.title;
-            categoryLink.href = `./category.html?category=${data.category}`;
-            image.src = data.image;
-            status.innerText = `Categoría: ${data.category}`;
-            especie.innerText = `Precio: $${data.price}`;
+fetch(url)
+    .then(function (res) {
+        return res.json();
+    })
+    .then(function (data) {
+        console.log(data);
+        let title = document.querySelector("h2");
+        let desc = document.querySelector(".desc");
+        let price = document.querySelector(".price");
+        let image = document.querySelector(".image");
 
-            let buyBtn = document.querySelector(".buy-btn.add-to-cart");
-            buyBtn.addEventListener("click", function (e) {
-                e.preventDefault();
-                agregarAlCarrito(data);
-            });
-        })
-        .catch(function(error){
-            return console.log(error)
+        let categoryLink = document.querySelector("h3");
+
+        title.innerText = data.title;
+        desc.innerText = data.description;git
+        price.innerText = `$${data.price}`;
+        image.src = data.image;
+
+        let category = data.category;
+        categoryLink.innerHTML = `<a href="./category.html?category=${category}">${category}</a>`;
+        categoryLink.querySelector("a").addEventListener("click", function (e) {
+            e.preventDefault();
+            let linkURL = `./category.html?category=${category}`;
+            location.href = linkURL;
         });
-}
 
-    function agregarAlCarrito(producto) {
-        let productosEnCarrito = localStorage.getItem("carItem");
         let carrito = [];
+        let recuperoStorage = localStorage.getItem("cartItems");
 
-        if (productosEnCarrito !== null) {
-            carrito = JSON.parse(productosEnCarrito);
+        if (recuperoStorage !== null) {
+            carrito = JSON.parse(recuperoStorage);
         }
 
-        carrito.push(producto.id);
-        localStorage.setItem("carItem", JSON.stringify(carrito));
-        let anadido = alert(`Producto "${producto.title}" añadido al carrito`);
-        console.log(anadido);
-        console.log("Carrito actualizado:", carrito);
+        let select = document.querySelector(".select");
+        select.addEventListener("click", function (e) {
+            e.preventDefault();
+            carrito.push(id);
+            let carStr = JSON.stringify(carrito);
+            localStorage.setItem("cartItems", carStr);
+
+            console.log("carrito", carrito);
+            console.log("localStore: ", localStorage);
+        });
+
+        let buyBtn = document.querySelector(".buy-btn.add-to-cart");
+        buyBtn.addEventListener("click", function (e) {
+            e.preventDefault();
+            agregarAlCarrito(data);
+        });
+
+    })
+    .catch(function (error) {
+        console.error(error);
+    });
+
+function agregarAlCarrito(producto) {
+    let productosEnCarrito = localStorage.getItem("carItem");
+    let carrito = [];
+
+    if (productosEnCarrito !== null) {
+        carrito = JSON.parse(productosEnCarrito);
     }
+
+    carrito.push(producto.id);
+    localStorage.setItem("carItem", JSON.stringify(carrito));
+    alert(`Producto "${producto.title}" añadido al carrito`);
+    console.log("Carrito actualizado:", carrito);
+}
+
