@@ -16,9 +16,9 @@ form.addEventListener("submit", function (event) {
     let terminos = tycCheckbox.checked;
 
     let errorMessages = document.querySelectorAll(".error-message");
-    errorMessages.forEach(function(error) {
-        error.innerText = "";
-    });
+    for (let i = 0; i < errorMessages.length; i++) {
+        errorMessages[i].innerText = "";
+    }
 
     let valid = true;
 
