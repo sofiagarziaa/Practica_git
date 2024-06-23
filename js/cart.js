@@ -1,8 +1,8 @@
 console.log(".cart.js");
 
 let recuperoStorage = localStorage.getItem("carItem");
-let carritoList = document.getElementById("carrito-list");
-let totalCarrito = document.getElementById("total-carrito");
+let carritoList = document.querySelector("carrito-list");
+let totalCarrito = document.querySelector("total-carrito");
 
 if (recuperoStorage === null) {
     mostrarCarritoVacio();
