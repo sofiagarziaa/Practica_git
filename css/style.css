@@ -124,15 +124,15 @@ h2 {
     flex-wrap: wrap;
     top: 50%;
     left: 50%;
-    max-width: 100%;
-    max-height: 100%;
+    width: auto;
+    height: 40%;
 
 }
 
 .elemento-hijo img {
-    width: 100%;
+    width: 50%;
     height: auto;
-    max-height: 200px;
+    align-self: center;
 }
 
 
@@ -280,7 +280,7 @@ footer {
         margin-right: 0;
         margin-bottom: 10px;
     }
-
+    
     .contenedor-padre {
         flex-direction: column;
         align-items: center;
@@ -291,6 +291,7 @@ footer {
         margin: 10px;
         border: 1px solid #ccc; 
     }
+
     .category-page {
         padding: 10px;
     }
