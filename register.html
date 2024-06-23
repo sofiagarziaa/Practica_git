@@ -1,6 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
-
+<html>
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=Edge">
@@ -13,9 +12,7 @@
         rel="stylesheet">
     <link rel="stylesheet" href="./css/style.css">
 </head>
-
 <body>
-
     <header>
         <div class="logo">
             <a href="./index.html"> <img class="logo" src="./img/z.png" alt="logo zora"> </a>
@@ -33,39 +30,37 @@
             </ul>
         </nav>
     </header>
-    <div class="contenedor-super">
-        <section class="login-registro">
 
-            <div class="container">
-                <form id="registro-form" class="registro-form" action="#">
-                    <h2>Registro</h2>
-                    <div class="form-group">
-                        <label for="email">Email:</label>
-                        <input type="email" id="email" name="email" required>
-                        <p id="email-error" class="error-message"></p>
-                    </div>
-                    <div class="form-group">
-                        <label for="password">Contraseña:</label>
-                        <input type="password" id="password" name="password" required>
-                        <p id="password-error" class="error-message"></p>
-                    </div>
-                    <div class="form-group">
-                        <label for="confirm-password">Repetir contraseña:</label>
-                        <input type="password" id="confirm-password" name="confirm-password" required>
-                        <p id="confirm-password-error" class="error-message"></p>
-                    </div>
-                    <div class="form-group">
-                        <article>  
-                            Terminos y condiciones <input type="checkbox" name="recupero" value="0">
-                        </article>
-                        <p id="terms-error" class="error-message"></p>
-                    </div>
-                    <button type="submit">Registrarme</button>
-                    <p><a href="./login.html">Ya tengo una cuenta</a></p>
-                </form>
-            </div>
-        </section>
-    </div>
+    <section class="login-registro">
+
+        <div class="container">
+            <form id="registro-form" class="registro-form" action="#">
+                <h2>Registro</h2>
+                <div class="form-group">
+                    <label for="email">Email:</label>
+                    <input type="email" id="email" name="email" required>
+                    <p id="email-error" class="error-message"></p>
+                </div>
+                <div class="form-group">
+                    <label for="password">Contraseña:</label>
+                    <input type="password" id="password" name="password" required>
+                    <p id="password-error" class="error-message"></p>
+                </div>
+                <div class="form-group">
+                    <label for="confirm-password">Repetir contraseña:</label>
+                    <input type="password" id="confirm-password" name="confirm-password" required>
+                    <p id="confirm-password-error" class="error-message"></p>
+                </div>
+                <div class="form-group">
+                    <input type="checkbox" id="terms" name="terms" required>
+                    <label for="terms">Términos y condiciones</label>
+                    <p id="terms-error" class="error-message"></p>
+                </div>
+                <button type="submit">Registrarme</button>
+                <p><a href="./login.html">Ya tengo una cuenta</a></p>
+            </form>
+        </div>
+    </section>
     <footer>
         <p>Zora ARG™</p>
         <p>Tiara Arredondo, Sofia Garzia</p>
