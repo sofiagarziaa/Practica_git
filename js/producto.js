@@ -21,7 +21,7 @@ fetch(url)
         let categoryLink = document.querySelector("h3");
 
         title.innerText = data.title;
-        desc.innerText = data.description;git
+        desc.innerText = data.description;
         price.innerText = `$${data.price}`;
         image.src = data.image;
 

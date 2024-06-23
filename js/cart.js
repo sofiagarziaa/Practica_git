@@ -1,53 +1,46 @@
-console.log(".cart.js");
-
+console.log(".cart.js")
 let recuperoStorage = localStorage.getItem("carItem");
-let carritoList = document.querySelector("carrito-list");
-let totalCarrito = document.querySelector("total-carrito");
+let cart = document.querySelector(".cart")
 
-if (recuperoStorage === null) {
-    mostrarCarritoVacio();
-} else {
-    let carrito = JSON.parse(recuperoStorage);
-    mostrarProductosEnCarrito(carrito);
-}
+let elementosCarrito = "";
 
-function mostrarCarritoVacio() {
-    let mensaje = "Tu carrito está vacío";
+if (recuperoStorage == null) {
+    let mensaje = "Tu carrito esta vacio";
     let empty = document.querySelector(".empty");
     empty.innerText = mensaje;
-}
+} else {
+    carrito = JSON.parse(recuperoStorage);
+    for (let i = 0; i < carrito.length; i++) {
+        let id = carrito[i]
+        let url = `https://fakestoreapi.com/products/${id}`;
 
-function mostrarProductosEnCarrito(carrito) {
-    let elementosCarrito = "";
-    let total = 0;
-
-    carrito.forEach(productId => {
-        let apiUrl = `https://fakestoreapi.com/products/${productId}`;
-
-        fetch(apiUrl)
-            .then(res => res.json())
-            .then(data => {
-                elementosCarrito += `
-                        <div class="elemento-hijo">
-                            <img src="${data.image}" alt="${data.title}" width="100">
-                            <p>${data.title}</p>
-                            <p>Description: ${data.description}</p>
-                            <p>$${data.price}</p>
-                            
-                        </div>`;
-                carritoList.innerHTML = elementosCarrito;
-
-                total += data.price;
-                totalCarrito.innerHTML = `<h3>Total: $${total.toFixed(2)}</h3>`;
+        fetch(url)
+            .then(function (res) {
+                return res.json();
             })
-            .catch(error => console.log(error));
-    });
+            .then(function (data) {
+                console.log(data);
+                elementosCarrito += 
+                    <div class="elemento-hijo">
+                        <img src="${data.image}" alt="${data.title}" width="100" />
+                        <p>${data.title}</p>
+                        <p>Description: ${data.description}</p>
+                        <p>$${data.price}</p>
+                        <a href="./producto.html?id=${data.id}" class="buy-btn add-to-cart">Ver más</a>
+                    </div>;
+                carritoList.innerHTML = elementosCarrito
+            })
+            .catch(function (e) {
+                console.log(e);
+            })
+    }
 }
 
-let finalizarCompraBtn = document.getElementById("finalizarCompraBtn");
-finalizarCompraBtn.addEventListener("click", function () {
-    localStorage.removeItem("carItem");
-    alert("¡Gracias por tu compra!");
-    location.replace("./index.html");
-});
+finalizarCompraBtn.addEventListener('click', function () {
 
+    localStorage.removeItem("productosEnCarrito");
+
+    alert("¡Gracias por tu compra!");
+
+    location.replace("./index.html");
+})
