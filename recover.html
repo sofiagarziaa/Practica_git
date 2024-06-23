@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html>
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=Edge">
@@ -35,25 +36,26 @@
         </nav>
     </header>
 
+    <div class="contenedor-super">
+        <section class="login-registro">
 
-    <section class="login-registro">
 
+            <div class="login-container">
+                <form action="recover.html" method="get">
+                    <h2>Recupero de contraseña</h2>
+                    <div class="input-group">
+                        <label for="email">Email:</label>
+                        <input type="email" id="email" name="email" required>
+                    </div>
+                    <article>
+                        Quiero recuperar la contraseña<input type="checkbox" name="recupero" value="0">
+                    </article>
 
-        <div class="login-container">
-            <form action="recover.html" method="get">
-                <h2>Recupero de contraseña</h2>
-                <div class="input-group">
-                    <label for="email">Email:</label>
-                    <input type="email" id="email" name="email" required>
-                </div>
-                <article>  
-                    Quiero recuperar la contraseña<input type="checkbox" name="recupero" value="0">
-                </article>
-                
-                <button type="submit">Recuperar</button>
-            </form>
-        </div>
-    </section>
+                    <button type="submit">Recuperar</button>
+                </form>
+            </div>
+        </section>
+    </div>
     <footer>
         <p>Zora ARG™</p>
         <p>Tiara Arredondo, Sofia Garzia</p>

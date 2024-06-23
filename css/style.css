@@ -79,15 +79,6 @@ h2 {
     align-items: center;
 }
 
-.contenedor-super2 {
-    display: flex;
-    flex-wrap: wrap;
-    flex-direction: column;
-    justify-content: center;
-    background-color: #f6f6f6;
-    padding: 20px;
-}
-
 .contenedor-padre {
     display: flex;
     flex-wrap: wrap;
@@ -108,25 +99,10 @@ h2 {
     flex-direction: column;
     align-self: center;
     flex-wrap: wrap;
-}
-
-.parte1 {
-    text-align: left;
-}
-
-.part2 {
-    text-align: right;
-    flex-wrap: wrap;
-    flex-direction: column;
-}
-
-.info {
-    flex-wrap: wrap;
     display: flex;
-    flex-direction: column;
-    justify-content: flex-end;
-    align-self: center;
+    text-align: center;
 }
+
 
 .contenedor-carrito {
     flex-wrap: wrap;
@@ -149,23 +125,10 @@ h2 {
 
 }
 
-.elemento-hijo {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    padding: 20px;
-    margin: 10px;
-    border: 1px solid #00000067;
-    background-color: #00000067;
-    box-sizing: border-box;
-    text-align: center;
-}
-
 .elemento-hijo img {
     width: 100%;
     height: auto;
-    max-height: 200px; /* Altura máxima deseada */
+    max-height: 200px;
 }
 
 
@@ -228,11 +191,6 @@ a:hover {
     color: rgb(47, 37, 28);
 }
 
-.carritos {
-    border-radius: 30%;
-    width: 60px;
-}
-
 .buy-btn {
     display: block;
     width: 100%;
@@ -249,7 +207,7 @@ a:hover {
     background-color: #0056b3;
 }
 /*DISEÑO CARRITO*/
-.carrito-page .contenedor-padre .elemento-hijo {
+.cart .contenedor-padre .elemento-hijo {
     flex: 1 1 calc(25% - 20px);
     margin: 10px;
     border: 1px solid #00000067;
@@ -259,7 +217,7 @@ a:hover {
     text-align: center;
 }
 
-.carrito-page .img {
+.cart .img {
     width: 100%; 
     height: auto;
     max-width: 100px; 
@@ -267,20 +225,20 @@ a:hover {
     margin: 0 auto 10px;
 }
 
-.carrito-page .carritos {
+.cart .carritos {
     border-radius: 30%;
     width: 40px;
     margin: 10px 0;
 }
 
-.carrito-page .total-carrito {
+.cart .total-carrito {
     width: 100%;
     text-align: right;
     margin: 20px 0;
     font-size: 18px;
 }
 
-.carrito-page .buy-btn {
+.cart .contenedor-super .finalizar-compra-container .buy-btn {
     display: block;
     width: 100%;
     text-align: center;

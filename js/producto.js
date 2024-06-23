@@ -40,17 +40,6 @@ fetch(url)
             carrito = JSON.parse(recuperoStorage);
         }
 
-        let select = document.querySelector(".select");
-        select.addEventListener("click", function (e) {
-            e.preventDefault();
-            carrito.push(id);
-            let carStr = JSON.stringify(carrito);
-            localStorage.setItem("cartItems", carStr);
-
-            console.log("carrito", carrito);
-            console.log("localStore: ", localStorage);
-        });
-
         let buyBtn = document.querySelector(".buy-btn.add-to-cart");
         buyBtn.addEventListener("click", function (e) {
             e.preventDefault();
