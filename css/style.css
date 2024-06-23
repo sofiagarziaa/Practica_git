@@ -1,0 +1,338 @@
+/*header*/
+.logo {
+    border-radius: 30%;
+    width: 60px;
+}
+.logo:hover {
+    transform: scale(1.3);
+}
+
+header {
+    background-color: #eaca9b;
+    color: #fff;
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+nav ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+nav ul li {
+    display: inline;
+    margin-right: 20px;
+}
+
+nav ul li a {
+    color: #fff;
+    text-decoration: none;
+}
+
+body {
+    font-family: 'Oswald', sans-serif;
+    background: #f6f6f6;
+    margin: 0;
+    padding: 0;
+    color: #000;
+}
+
+/* CAJAS DE HOME */
+.Titulo {
+    font-family: 'Oswald', sans-serif;
+    font-size: 45px;
+    font-weight: normal;
+    text-align: center;
+    color: #0b1729;
+}
+
+.Subtitulo {
+    font-family: 'Kanit', sans-serif;
+    font-size: 25px;
+    font-weight: normal;
+    text-align: left;
+    color: #0b1729;
+}
+
+h2 {
+    background-color: #e2d3b9;
+    color: #000000;
+    padding: 20px;
+    text-align: center;
+}
+
+.categoria {
+    flex-wrap: wrap;
+    flex-direction: row;
+}
+
+.contenedor-super {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: space-between;
+    background-image: url("../Img/fondo.jpg");
+    background-size: 100%;
+    padding-bottom: 2%;
+    align-items: center;
+}
+
+.contenedor-padre {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+
+.elemento-hijo {
+    flex: 1;
+    margin: 0 10px 20px;
+    border: 1px solid #00000067;
+    padding: 20px;
+    background-color: #00000067;
+    padding-bottom: 2%;
+    justify-content: center;
+    align-items: flex-start; 
+    box-sizing: border-box;
+    border-image-width: auto;
+    flex-direction: column;
+    align-self: flex-start;
+    flex-wrap: wrap;
+    display: flex;
+    text-align: flex-start;
+    flex-direction:column;
+    
+}
+
+.contenedor-carrito {
+    flex-wrap: wrap;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-self: center;
+    max-width: 50%;
+    max-height: 50%;
+}
+
+/*DISEÑO DE IMAGENES*/
+.img {
+    display: flex;
+    flex-wrap: wrap;
+    top: 50%;
+    left: 50%;
+    width: auto;
+    height: 40%;
+
+}
+
+.elemento-hijo img {
+    width: 70%;
+    height: auto;
+    align-self: center;
+}
+
+
+.logo img {
+    max-width: 150px;
+}
+
+/*DISEÑO CAJAS DE FORMULARIOS*/
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+.form-group input {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+    margin: 0px 0px 5px 0px;
+}
+
+.form-group button {
+    width: 100%;
+    padding: 10px;
+    background-color: #000000;
+    color: #ffffff;
+    border: none;
+    border-radius: 3px;
+}
+
+.form-group button:hover {
+    background-color: #80694b;
+}
+
+.login-registro {
+    width: 300px;
+    margin: 200px auto;
+    padding: 20px 40px 20px 20px;
+    background-color: #c39e82;
+    border-radius: 10px;
+}
+.margen {
+    margin: 10% auto;
+    padding: 40px 50px 20px 100px;
+
+}
+.login-container h2 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+/*DISEÑO BOTONES*/
+a {
+    color: rgb(21, 17, 10);
+    text-decoration: none;
+}
+
+a:hover {
+    color: rgb(47, 37, 28);
+}
+
+.buy-btn {
+    display: block;
+    width: 100%;
+    text-align: center;
+    background-color: #000000;
+    color: #fff;
+    padding: 10px;
+    text-decoration: none;
+    border-radius: 5px;
+    margin-top: 10px;
+}
+
+.buy-btn:hover {
+    background-color: #0056b3;
+}
+/*DISEÑO CARRITO*/
+.cart .contenedor-padre .elemento-hijo {
+    flex: 1 1 calc(25% - 20px);
+    margin: 10px;
+    border: 1px solid #00000067;
+    padding: 10px; 
+    background-color: #ffffff;
+    box-sizing: border-box;
+    text-align: center;
+}
+
+.cart .img {
+    width: 100%; 
+    height: auto;
+    max-width: 100px; 
+    display: block;
+    margin: 0 auto 10px;
+}
+
+.cart .carritos {
+    border-radius: 30%;
+    width: 40px;
+    margin: 10px 0;
+}
+
+.cart .total-carrito {
+    width: 100%;
+    text-align: right;
+    margin: 20px 0;
+    font-size: 18px;
+}
+
+.cart .contenedor-super .finalizar-compra-container .buy-btn {
+    display: block;
+    width: 100%;
+    text-align: center;
+    background-color: #000;
+    color: #fff;
+    padding: 10px;
+    text-decoration: none;
+    border-radius: 5px;
+    margin-top: 20px;
+}
+
+.buy-btn:hover {
+    background-color: #0056b3;
+}
+/*DISEÑO FOOTER*/
+footer {
+    background-color: #d5b68c;
+    color: #fff;
+    text-align: center;
+    padding: 10px;
+    margin: 0px;
+}
+
+/*DISEÑO RESPONSIVE*/
+
+/* Tablets */
+
+@media (max-width: 768px) {
+    nav ul {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    nav ul li {
+        margin-right: 0;
+        margin-bottom: 10px;
+    }
+    
+    .contenedor-padre {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .elemento-hijo {
+        flex: 0 1 45%;
+        margin: 10px;
+        border: 1px solid #ccc; 
+    }
+
+    .category-page {
+        padding: 10px;
+    }
+
+    .product-item {
+        flex: 0 1 calc(50% - 10px);
+        margin: 5px;
+    }
+}
+
+/* Celulares */
+@media (max-width: 480px) {
+    header {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .contenedor-padre {
+        flex-direction: column;
+    }
+
+    .elemento-hijo {
+        flex: 0 1 100%;
+        margin: 10px;
+        border: 1px solid #ccc; 
+    }
+
+    .elemento-hijo h3 {
+        font-size: 16px;
+    }
+
+    .elemento-hijo p {
+        font-size: 14px;
+    }
+
+    .elemento-hijo img {
+        max-width: 100%; 
+        height: auto;
+    }
+
+}
