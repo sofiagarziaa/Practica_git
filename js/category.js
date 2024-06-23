@@ -14,7 +14,7 @@ fetch(url)
         let categoryTitle = document.querySelector("h2");
         categoryTitle.innerText = `${category}`;
         let contenido = "";
-        for (let i = 0; i < data.length && i < 5; i++) {
+        for (let i = 0; i < data.length; i++) {
             contenido += `
                                 <div class="elemento-hijo">
                                     <img src="${data[i].image}" alt="${data[i].title}" width="100" />
@@ -26,6 +26,16 @@ fetch(url)
         }
         console.log(contenido);
         lista.innerHTML = contenido;
+
+        let verMasButtons = document.querySelectorAll(".ver-mas-btn");
+
+        for (let i = 0; i < verMasButtons.length; i++) {
+            verMasButtons[i].addEventListener("click", function (event) {
+                event.preventDefault();
+                const url = verMasButtons[i].href;
+                location.href = url;
+            });
+        }
 
     })
     .catch(function (error) {

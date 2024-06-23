@@ -52,15 +52,15 @@ fetch(url)
     });
 
 function agregarAlCarrito(producto) {
-    let productosEnCarrito = localStorage.getItem("carItem");
+    let elementosCarrito = localStorage.getItem("cartItems");
     let carrito = [];
 
-    if (productosEnCarrito !== null) {
-        carrito = JSON.parse(productosEnCarrito);
+    if (elementosCarrito !== null) {
+        carrito = JSON.parse(elementosCarrito);
     }
 
     carrito.push(producto.id);
-    localStorage.setItem("carItem", JSON.stringify(carrito));
+    localStorage.setItem("cartItems", JSON.stringify(carrito));
     alert(`Producto "${producto.title}" añadido al carrito`);
     console.log("Carrito actualizado:", carrito);
 }
