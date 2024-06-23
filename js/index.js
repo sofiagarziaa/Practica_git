@@ -62,17 +62,19 @@ fetch(url3)
     })
     .then(function (data) {
         console.log(data);
+        
         let lista = document.querySelector("#mens-clothing-container");
         let contenido = "";
 
         for (let i = 0; i < data.length; i++) {
             contenido += `
                             <div class="elemento-hijo">
-                                <img src="${data[i].image}" alt="${data[i].title}" width="100" />
+                                <img src="${data[i].image}" >
                                 <p>${data[i].title}</p>
                                 <p>Description: ${data[i].description}</p>
                                 <p>$${data[i].price}</p>
-                                <a href="./producto.html?id=${data[i].id}" class="ver-mas-btn">Ver más</a>
+                                <p>${data[i].category}</p>
+                                <a href="producto.html?id=${data[i].id}" >Ver más</a>
                             </div>`;
         }
         console.log(contenido);

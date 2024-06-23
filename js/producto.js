@@ -5,9 +5,7 @@ console.log("query string: ", qs);
 let qsto = new URLSearchParams(qs);
 const id = qsto.get('id');
 
-
 let url = `https://fakestoreapi.com/products/${id}`;
-
 
 fetch(url)
     .then(function (res) {
@@ -33,28 +31,48 @@ fetch(url)
             e.preventDefault();
             let linkURL = `./category.html?category=${category}`;
             location.href = linkURL;
-        })
-        })
-        .catch(function (error) {
-                console.error(error);
         });
-    
 
         let carrito = [];
-        let recuperoStorage = localStorage.getItem("cartItems")
+        let recuperoStorage = localStorage.getItem("cartItems");
 
-        if (recuperoStorage != null) {
-            carrito = JSON.parse(recuperoStorage)
+        if (recuperoStorage !== null) {
+            carrito = JSON.parse(recuperoStorage);
         }
 
-        let select = document.querySelector(".select")
+        let select = document.querySelector(".select");
         select.addEventListener("click", function (e) {
             e.preventDefault();
-            carrito.push(id)
-            let carStr = JSON.stringify(carrito)
-            localStorage.setItem("cartItems", carStr)
+            carrito.push(id);
+            let carStr = JSON.stringify(carrito);
+            localStorage.setItem("cartItems", carStr);
 
-            console.log("carrito", carrito)
-            console.log("localStore: ", localStorage)
-        })
+            console.log("carrito", carrito);
+            console.log("localStore: ", localStorage);
+        });
+
+        let buyBtn = document.querySelector(".buy-btn.add-to-cart");
+        buyBtn.addEventListener("click", function (e) {
+            e.preventDefault();
+            agregarAlCarrito(data);
+        });
+
+    })
+    .catch(function (error) {
+        console.error(error);
+    });
+
+function agregarAlCarrito(producto) {
+    let productosEnCarrito = localStorage.getItem("carItem");
+    let carrito = [];
+
+    if (productosEnCarrito !== null) {
+        carrito = JSON.parse(productosEnCarrito);
+    }
+
+    carrito.push(producto.id);
+    localStorage.setItem("carItem", JSON.stringify(carrito));
+    alert(`Producto "${producto.title}" añadido al carrito`);
+    console.log("Carrito actualizado:", carrito);
+}
 

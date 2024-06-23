@@ -27,16 +27,6 @@ fetch(url)
         console.log(contenido);
         lista.innerHTML = contenido;
 
-        let verMasButtons = document.querySelectorAll(".ver-mas-btn");
-
-        for (let i = 0; i < verMasButtons.length; i++) {
-            verMasButtons[i].addEventListener("click", function (event) {
-                event.preventDefault();
-                const url = verMasButtons[i].href;
-                location.href = url;
-            });
-        }
-
     })
     .catch(function (error) {
         console.error('Error fetching products:', error);

@@ -1,78 +1,53 @@
-const carritoList = document.querySelector("#carrito-list");
-const totalCarrito = document.querySelector("#total-carrito");
-const finalizarCompraBtn = document.querySelector(".buy-btn");
+console.log(".cart.js");
 
-let recuperoStorage = localStorage.getItem("cartItems")
-let cart = document.querySelector(".cart")
+let recuperoStorage = localStorage.getItem("carItem");
+let carritoList = document.getElementById("carrito-list");
+let totalCarrito = document.getElementById("total-carrito");
 
-let elementosCarrito = "";
+if (recuperoStorage === null) {
+    mostrarCarritoVacio();
+} else {
+    let carrito = JSON.parse(recuperoStorage);
+    mostrarProductosEnCarrito(carrito);
+}
 
-if (recuperoStorage == null) {
-    let mensaje = "Tu carrito esta vacio";
+function mostrarCarritoVacio() {
+    let mensaje = "Tu carrito está vacío";
     let empty = document.querySelector(".empty");
     empty.innerText = mensaje;
-} else {
-    carrito = JSON.parse(recuperoStorage);
-    for (let i = 0; i < carrito.length; i++) {
-        let id = carrito[i]
-        let url = `https://fakestoreapi.com/products/${id}`;
-
-        fetch(url)
-            .then(function (res) {
-                return res.json();
-            })
-            .then(function (data) {
-                console.log(data);
-                elementosCarrito += `
-                    <div class="elemento-hijo">
-                        <img src="${data.image}" alt="${data.title}" width="100" />
-                        <p>${data.title}</p>
-                        <p>Description: ${data.description}</p>
-                        <p>$${data.price}</p>
-                        <a href="./producto.html?id=${data.id}" class="select">Ver más</a>
-                    </div>`;
-                carritoList.innerHTML = elementosCarrito
-            })
-            .catch(function (e) {
-                console.log(e);
-            })
-    }
 }
-/*mostrarProductosEnCarrito(productosEnCarrito);
 
-function mostrarProductosEnCarrito(productos) {
+function mostrarProductosEnCarrito(carrito) {
+    let elementosCarrito = "";
     let total = 0;
-    carritoList.innerHTML = "";
 
-    if (productos.length === 0) {
-        totalCarrito.innerHTML = `<h3>Su carrito está vacío</h3>`;
-        finalizarCompraBtn.classList.add('hidden');
-    } else {
-        productos.forEach(producto => {
-            let itemHTML = `
-                        <div class= "elemento-hijo">
-                            <img src="${producto.image}" alt="${producto.title}" width="100" />
-                            <p>${producto.title}</p>
-                            <p>Description: ${producto.description}</p>
-                            <p>$${producto.price}</p>
-                            <p>${producto.category}</p>
-                        </div>
-                `;
-            carritoList.innerHTML += itemHTML;
-            total += producto.price;
-        });
+    carrito.forEach(productId => {
+        let apiUrl = `https://fakestoreapi.com/products/${productId}`;
 
-        totalCarrito.innerHTML = `<h3>Total: $${total.toFixed(2)}</h3>`;
-        finalizarCompraBtn.classList.remove('hidden');
-    }
+        fetch(apiUrl)
+            .then(res => res.json())
+            .then(data => {
+                elementosCarrito += `
+                        <div class="elemento-hijo">
+                            <img src="${data.image}" alt="${data.title}" width="100">
+                            <p>${data.title}</p>
+                            <p>Description: ${data.description}</p>
+                            <p>$${data.price}</p>
+                            
+                        </div>`;
+                carritoList.innerHTML = elementosCarrito;
+
+                total += data.price;
+                totalCarrito.innerHTML = `<h3>Total: $${total.toFixed(2)}</h3>`;
+            })
+            .catch(error => console.log(error));
+    });
 }
 
-finalizarCompraBtn.addEventListener('click', function () {
-
-    localStorage.removeItem("productosEnCarrito");
-
+let finalizarCompraBtn = document.getElementById("finalizarCompraBtn");
+finalizarCompraBtn.addEventListener("click", function () {
+    localStorage.removeItem("carItem");
     alert("¡Gracias por tu compra!");
-
     location.replace("./index.html");
-});*/
+});
 
