@@ -2,12 +2,13 @@ console.log("cart.js");
 
 let recuperoStorage = localStorage.getItem("cartItems");
 let cart = document.querySelector(".cart");
-let carritoList = document.querySelector(".cart-items");  // Asegúrate de tener un elemento con la clase .cart-items
-let finalizarCompraBtn = document.querySelector("#finalizar-compra");  // Asegúrate de tener un botón con el id #finalizar-compra
-
+let carritoList = document.querySelector(".cart-items");
+let finalizarCompraBtn = document.querySelector(".buy-btn");
+let totalCompra = document.querySelector(".total-carrito");
 let elementosCarrito = "";
+let total = 0;
 
-if (recuperoStorage == null) {
+if (recuperoStorage == null || JSON.parse(recuperoStorage).length === 0) {
     let mensaje = "Tu carrito está vacío";
     let empty = document.querySelector(".empty");
     empty.innerText = mensaje;
@@ -23,15 +24,17 @@ if (recuperoStorage == null) {
             })
             .then(function (data) {
                 console.log(data);
+                total += data.price;
                 elementosCarrito += `
                     <div class="elemento-hijo">
                         <img src="${data.image}" alt="${data.title}" width="100" />
                         <p>${data.title}</p>
                         <p>Description: ${data.description}</p>
-                        <p>$${data.price}</p>
+                        <p>Precio: $${data.price}</p>
                         <a href="./producto.html?id=${data.id}" class="buy-btn add-to-cart">Ver más</a>
                     </div>`;
                 carritoList.innerHTML = elementosCarrito;
+                totalCompra.innerText = `Total: $${total}`;
             })
             .catch(function (e) {
                 console.log(e);
@@ -40,7 +43,8 @@ if (recuperoStorage == null) {
 }
 
 finalizarCompraBtn.addEventListener('click', function () {
-    localStorage.removeItem("cartItems");
+    localStorage.clear();
     alert("¡Gracias por tu compra!");
     location.replace("./index.html");
 });
+
