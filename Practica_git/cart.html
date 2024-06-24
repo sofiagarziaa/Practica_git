@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Carrito de Compras - ZORA ARG</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Anton&family=Kanit:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800&family=Oswald:wght@200..700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./css/style.css">
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <a href="./index.html">
+                <img class="logo" src="./img/z.png" alt="logo zora">
+            </a>
+        </div>
+
+        <h4 id="saludo"></h4>
+        <a id="logout-link" href="#" style="display:none;">Logout</a>
+        
+        <nav>
+            <ul>
+                <li class="category"><a href="./category.html?category=men's clothing">Men's clothing</a></li>
+                <li class="category"><a href="./category.html?category=jewelery">Jewelery</a></li>
+                <li class="category"><a href="./category.html?category=women's clothing">Women's clothing</a></li>
+                <li class="category"><a href="./category.html?category=electronics">Electronics</a></li>
+                <li class="category"><a href="./cart.html">Cart</a></li>
+                <li class="category" id="login"><a href="./login.html">Login</a></li>
+                <li class="category" id="signin"><a href="./register.html">Sign Up</a></li>
+                <li class="category"><a href="./recover.html">Recover</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section class="cart">
+        <div class="contenedor-super">
+            <h1>Mi carrito</h1>
+            <p class="empty"></p>
+            <ul id="carrito-list" class="contenedor-padre">
+            </ul>
+            <div id="total-carrito" class="total-carrito">
+                <h3>Total: $0</h3>
+            </div>
+            <div class="finalizar-compra-container">
+                <button id="finalizarCompraBtn" class="buy-btn">Finalizar Compra</button>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <p>Zora ARG™</p>
+        <p>Tiara Arredondo, Sofia Garzia</p>
+    </footer>
+
+    <script src="./js/cart.js"></script>
+    <script src="./js/saludo.js"></script>
+    <script src="./js/logout.js"></script>
+</body>
+</html>
