@@ -36,5 +36,5 @@ function preventDefault(selector, message) {
 
 function preventDefault(selector) {
     let errorMessage =  document.querySelector(selector);
-    errorMessage.innerText = "";
+    errorMessage.innerText = "error";
 }
